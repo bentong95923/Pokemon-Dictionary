@@ -5,12 +5,13 @@ import Home from '../screens/home';
 import Details from '../screens/details';
 
 const screens = {
+    // Orders matter!    
     Home: {
         screen: Home
     },
     Details: {
         screen: Details
-    }
+    },
 }
 
 const HomeStack = createStackNavigator(screens);
