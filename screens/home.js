@@ -1,24 +1,20 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, FlatList } from 'react-native';
+import { StyleSheet, Text, View, TextInput } from 'react-native';
+// import { TextInput } from 'react-native-gesture-handler';
 
 export default function Home({ navigation }) {
 
-    const [reviews, setReviews] = useState([
-        { title: 'Zelda, Breath of Fresh Air', rating: 5, body: 'lorem ipsum', key: '1' },
-        { title: 'ZGotta Catch Them All (again)', rating: 4, body: 'lorem ipsum', key: '2' },
-        { title: 'Not So "Final" Fantasy', rating: 3, body: 'lorem ipsum', key: '3' },
-    ]);
+    const [pokemon, setPokemon] = useState("");
 
     return (
         <View style={styles.container}>
-            <FlatList
-                data={reviews}
-                renderItem={({ item }) => ( // navigate(string name of screen, data to be sent to the page)
-                    <TouchableOpacity onPress={() => (navigation.navigate('Details', item))}>
-                        <Text>{item.title}</Text>
-                    </TouchableOpacity>
-                )}
+            <Text>Enter Pokemon:</Text>
+            <TextInput
+                style={styles.input}
+                onChangeText={(val) => setPokemon(val)}
+                placeholder="e.g. Pikachu"
             />
+            <Text>{pokemon}</Text>
         </View>
     );
 }
@@ -30,12 +26,11 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         backgroundColor: '#fff',
     },
-    item: {
-        flex: 1,
-        marginHorizontal: 10,
-        marginTop: 24,
-        padding: 30,
-        backgroundColor: 'pink',
-        fontSize: 24,
-    },
+    input: {
+        borderColor: '#777',
+        borderWidth: 1,
+        padding: 8,
+        margin: 10,
+        width: 200
+    }
 });
