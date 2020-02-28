@@ -5,11 +5,12 @@ import Home from '../screens/home';
 import Details from '../screens/details';
 
 const screens = {
-    // Orders matter!    
-    Home: {
+    // First Page   
+    "Find Pokemon": {
         screen: Home
     },
-    Details: {
+    // Detail Page
+    "Pokemon Details": {
         screen: Details
     },
 }

@@ -9,6 +9,7 @@ const client = new ApolloClient({
     cache: new InMemoryCache()
 });
 
+/* Start Apollo Client and React Navigation */
 export default App = () => (
     <ApolloProvider client={client}>
         <Navigator />

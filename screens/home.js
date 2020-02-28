@@ -7,7 +7,9 @@ export default function Home({ navigation }) {
 
     const [pokemonSearchName, setPokemonSearchName] = useState("");
     const [pokemon, setPokemon] = useState([]);
+    
     const fetchPokemon = (poke) => {
+        // GraphQL
         const GET_POKEMON_DETAILS = gql`
         {
             pokemon(name: "${poke}") {
@@ -40,9 +42,11 @@ export default function Home({ navigation }) {
                 }
             }
         }          
-        `
+        `;
+        // Find Pokemon status message
         let msg = "";
         return (
+            // Run query and store results
             <Query query={GET_POKEMON_DETAILS}>
                 {(response, error) => {
                     if (error) {
@@ -86,7 +90,7 @@ export default function Home({ navigation }) {
                         source={{ uri: pokemon.image }}
                     />}
             </View>
-            {pokemon.id && <Button title='Pokemon details' onPress={() => navigation.navigate("Details", pokemon)} />}
+            {pokemon.id && <Button title='Pokemon details' onPress={() => navigation.navigate("Pokemon Details", pokemon)} />}
         </View>
     );
 }

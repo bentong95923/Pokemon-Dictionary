@@ -8,15 +8,16 @@ import gql from 'graphql-tag';
 export default function Details({ navigation }) {
 
     const fetchEvolutionsImage = (pokeID) => {
+        // GraphQL for getting envolutions image
         const GET_EVOLUTION_IMAGE_BY_ID = gql`
         {
             pokemon(id: "${pokeID}") {
             image
             }
         }        
-        `
-            ;
+        `;
         return (
+            // Run Query
             <Query query={GET_EVOLUTION_IMAGE_BY_ID}>
                 {(response, error) => {
                     if (error) {
@@ -34,8 +35,6 @@ export default function Details({ navigation }) {
             </Query>
         );
     }
-
-
 
     return (
         <View style={styles.container}>
@@ -77,11 +76,11 @@ export default function Details({ navigation }) {
                     renderItem={({ item }) => (
                         <View>
                             <Text>- {item.name} </Text>
+                            {/* Get Evolutions Image */}
                             {fetchEvolutionsImage(item.id)}
                         </View>
                     )}
                     keyExtractor={item => item.id}
-
                 />
                 :
                 <Text>None</Text>
@@ -97,13 +96,5 @@ const styles = StyleSheet.create({
         paddingTop: 40,
         paddingHorizontal: 20,
         backgroundColor: '#fff',
-    },
-    item: {
-        flex: 1,
-        marginHorizontal: 10,
-        marginTop: 24,
-        padding: 30,
-        backgroundColor: 'pink',
-        fontSize: 24,
     },
 })
