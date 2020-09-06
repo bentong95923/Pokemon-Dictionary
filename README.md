@@ -1,11 +1,11 @@
-# VpApp
+# Pokemon Dictionary
 by Benjamin Tong
 
 This is a simple React native app with GraphQL (Apollo) and React Navigation. It allows users to look up a Pokemon and its details.
 
 ## Instruction:
 
-1. Run `npm install --save @types/classnames` to install all the dependencies
+1. Run `npm install` to install all the dependencies
 
 2. Install Android Studio and open an AVD for live update of the app.
 
