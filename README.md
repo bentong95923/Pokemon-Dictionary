@@ -1,4 +1,4 @@
-# Pokemon Dictionary
+# Pokemon Wiki
 by Benjamin Tong
 
 This is a simple React native app with GraphQL (Apollo) and React Navigation. It allows users to look up a Pokemon and its details.
